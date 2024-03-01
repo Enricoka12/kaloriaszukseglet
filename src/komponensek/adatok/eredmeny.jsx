@@ -6,35 +6,18 @@ function Eredmeny(props) {
     const { suly, nem, magassag, kor } = props; // Az adatok destructuring segítségével
 
 
-let kaloria = 2000;
+
+
+
+    let kaloria;
+if (nem === "no") {
+    kaloria = 10 * suly + 6.25 * magassag - 5 * kor + 5;
+} else {
+    kaloria = 10 * suly + 6.25 * magassag - 5 * kor - 161;
+}
+
+
 let tervnev = `Szükséges kalória: ${kaloria}`;
-
-if (nem = "ferfi" {
-    let valasztottnem = 
-})
-
-
-
-const simakaloria = 10*suly+6.25*magassag-5*kor
-    
-
-
-  /*
- Mifflin-St Jeor Equation:
-For men:
-BMR = 10W + 6.25H - 5A + 5
-For women:
-BMR = 10W + 6.25H - 5A - 161
-
-W is body weight in kg
-H is body height in cm
-A is age
-F is body fat in percentage 
-
-
-szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
-. */
-
 
 
 
@@ -45,7 +28,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
        <div>     
 
 <div className=" max-w-sm m-auto  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{tervnev}</h5>
 <div className="flex items-baseline text-gray-900 dark:text-white">
 <span className="text-3xl font-semibold">$</span>
 <span className="text-5xl font-extrabold tracking-tight">49</span>
