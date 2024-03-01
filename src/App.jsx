@@ -1,6 +1,4 @@
 import React from "react";
-import Fogyas from "./komponensek/fogyas";
-import Tomegnoveles from "./komponensek/tomegnoveles";
 import Fooldal from "./komponensek/fooldal";
 import { useState } from "react";
 import "./App.css";
@@ -55,12 +53,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
   const Szalkasitas = () => {
     setKartyakLathatoak(false); // Az összes kártya elrejtése
     setUjKomponensLathato(true); // Az új komponens megjelenítése
-    setmutatottOldal("Fogyas");
-  };
-
-  const Haza = () => {
-    setKartyakLathatoak(true); // Az összes kártya elrejtése
-    setUjKomponensLathato(false); // Az új komponens megjelenítése
+    setmutatottOldal("Szalkasitas");
   };
 
   const Tomegeles = () => {
@@ -69,57 +62,60 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setmutatottOldal("Tomegnoveles");
   };
 
+  const Szintentartas = () => {
+    setKartyakLathatoak(false); // Az összes kártya elrejtése
+    setUjKomponensLathato(true);
+    setmutatottOldal("Szintentartas");
+  };
+
+  const Fogyas = () => {
+    setKartyakLathatoak(false); // Az összes kártya elrejtése
+    setUjKomponensLathato(true);
+    setmutatottOldal("Fogyas");
+  };
+
+  const Haza = () => {
+    setKartyakLathatoak(true); // Az összes kártya elrejtése
+    setUjKomponensLathato(false); // Az új komponens megjelenítése
+  };
+
   const [mutatottOldal, setmutatottOldal] = useState();
 
-
-
-
   return (
-
-
-
-
     <div className=" bg-black">
       {/* komponensek hivasa gombnyomás szerint */}
 
       <div className="flex flex-col min-h-screen">
 
-
-
-
-
-
+        
         {/*Navigáció */}
         <div className=" text-white py-4">
           <Navigacio onClick={Haza} />
         </div>
 
 
-
-
-
-
         {/*Fő komponens */}
-
-        
         <div className="flex-1">
           <Fooldal className="sm:mx-4" />
-          {ujKomponensLathato && mutatottOldal === "Fogyas" && (
-            <div>
-              {" "}
-              <Adatbekeres /> <button>Vissza</button>{" "}
-            </div>
-          )}{" "}
-
-
-
-
-
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && (
+          {ujKomponensLathato && mutatottOldal === "Fogyas" && <Adatbekeres />}
+
+          {/* Az új komponens megjelenítése */}
+          {ujKomponensLathato && mutatottOldal === "Szalkasitas" && 
             <Adatbekeres />
-          )}
+          }
+
+          {/* Az új komponens megjelenítése */}
+          {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && 
+            <Adatbekeres />
+          }
+
+          {/* Az új komponens megjelenítése */}
+          {ujKomponensLathato && mutatottOldal === "Szintentartas" && 
+            <Adatbekeres />
+          }
+
           {kartyakLathatoak && (
             <div className="kartyak container mx-auto">
               <div className="grid mx-auto gap-2 p-20 sm:p-0  md:gap-4  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-4 ">
@@ -129,7 +125,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                   tulajdonsag2="Magas fehérje mennyiség"
                   tulajdonsag3="Alacsony szénhidrát mennyiség"
                   tulajdonsag4="Magas zsír mennyiség"
-                  onClick={Szalkasitas}
+                  onClick={Fogyas}
                 />
 
                 <Kartya
@@ -138,6 +134,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                   tulajdonsag2="Magas fehérje mennyiség"
                   tulajdonsag3="Alacsony szénhidrát mennyiség"
                   tulajdonsag4="Közepes zsír mennyiség"
+                  onClick={Szalkasitas}
                 />
 
                 <Kartya
@@ -146,6 +143,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                   tulajdonsag2="Közepes fehérje mennyiség"
                   tulajdonsag3="Közepes szénhidrát mennyiség"
                   tulajdonsag4="Közepes zsír mennyiség"
+                  onClick={Szintentartas}
                 />
 
                 <Kartya
@@ -160,19 +158,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
             </div>
           )}
         </div>
-        {ujKomponensLathato && mutatottOldal === "Fogyas" && (
-          <div>
-            {" "}
-            <Adatbekeres /> <button>Vissza</button>{" "}
-          </div>
-        )}{" "}
-        {/* Az új komponens megjelenítése */}
-        {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && (
-          <Adatbekeres />
-        )}
-
-
-
+        
         {/*Lábrész */}
         <div className=" text-white py-4">
           <Lab />

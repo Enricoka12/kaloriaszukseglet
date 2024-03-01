@@ -7,6 +7,9 @@ import Nem from "./nem"
 
 function Adatbekeres() {
 
+
+  //Oldalválasztás -->  
+
 const [aktivoldal,setaktivoldal] = useState(1);
 
 function kovetkezooldal() {
@@ -16,7 +19,12 @@ function kovetkezooldal() {
 function elozooldal() {
     setaktivoldal(aktivoldal-1)
 }
+  // <-- Oldalválasztás  
 
+
+
+
+  //adatok kinyerése
 const [nem,setnem] = useState();
 
 function nembeallitas() {
@@ -41,10 +49,10 @@ function sulybeallitas() {
     setsuly ="";
 }
 
-const [nemVisible, setNemVisible] = useState(false);
-const [korVisible, setKorVisible] = useState(false);
-const [magassagVisible, setMagassagVisible] = useState(false);
-const [sulyVisible, setSulyVisible] = useState(false);
+//adatok kinyerése
+
+
+
 
 
 
