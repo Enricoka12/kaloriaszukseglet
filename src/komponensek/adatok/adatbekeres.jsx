@@ -6,7 +6,7 @@ import Magassag from "./magassag"
 import Nem from "./nem"
 import Eredmeny from "./eredmeny";
 
-function Adatbekeres() {
+function Adatbekeres(props) {
 
 
   //Oldalválasztás -->  
@@ -39,6 +39,23 @@ const [magassag,setmagassag] = useState("");
 
 
 const [suly,setsuly] = useState("");
+
+let cel = props.cel
+console.log(cel)
+
+let feladat;
+
+if (cel === "fogyas") {
+  feladat = -500
+} else if ( cel ==="szalkasitas") {
+  feladat = -250
+} else if ( cel ==="szintentartas") {
+  feladat = 0
+} else if ( cel ==="tomegeles") {
+  feladat = 250
+} else if (cel ==="tomegeles2") {
+  feladat = 500
+}
 
 
 

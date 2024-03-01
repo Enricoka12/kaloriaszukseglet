@@ -16,16 +16,6 @@ function App() {
 
 
 
-  function ferfiszukseglet() {
-    return (ferfikaloriaszukseglet =
-      10 * suly + 6.25 * magassagcmben - 5 * kor + 5);
-  }
-
-  function noiszukseglet() {
-    return (noikaloriaszukseglet =
-      10 * suly + 6.25 * magassagcmben - 5 * kor - 161);
-  }
-
   /*
  Mifflin-St Jeor Equation:
 For men:
@@ -90,6 +80,19 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
   const [mutatottOldal, setmutatottOldal] = useState();
 
+
+  let fogyas = -500;
+
+  let szalkasitas =-250
+
+let szintentertas = 0
+
+let tomegeles = 250
+
+let tomegeles2 = 500
+
+
+
   return (
     <div className=" bg-black">
       {/* komponensek hivasa gombnyomás szerint */}
@@ -102,32 +105,38 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
           <Navigacio onClick={Haza} />
         </div>
 
+    
+        
 
-        {/*Fő komponens */}
+        {/*Fő komponens  ha az ujkomponenslathato akkor ne legyen lathato az udvozloszoveg */}
         <div className="flex-1">
-          <Udvozloszoveg className="sm:mx-4" />
+
+          {ujKomponensLathato ? null :  <Udvozloszoveg className="sm:mx-4" />}
+          
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Fogyas" && <Adatbekeres />}
+          {ujKomponensLathato && mutatottOldal === "Fogyas" &&
+           <Adatbekeres cel="fogyas" /> //<--- itt szeretném átadni az adatbekeres komponensnek azt az erteket amit a mutatottOldal felvesz igy helyes?
+           }
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Szalkasitas" && 
-            <Adatbekeres />
-          }
+            <Adatbekeres cel="szalkasitas" />
+          } 
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && 
-            <Adatbekeres />
+            <Adatbekeres cel="tomegnoveles" />
           }
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Tomegnoveles2" && 
-            <Adatbekeres />
+            <Adatbekeres cel="tomegnoveles2" />
           }
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Szintentartas" && 
-            <Adatbekeres />
+            <Adatbekeres  cel="szintentartas" />
           }
 
           {kartyakLathatoak && (
