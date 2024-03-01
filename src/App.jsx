@@ -1,5 +1,5 @@
 import React from "react";
-import Fooldal from "./komponensek/fooldal";
+import Udvozloszoveg from "./komponensek/fooldal";
 import { useState } from "react";
 import "./App.css";
 import Lab from "./komponensek/lab";
@@ -11,12 +11,10 @@ function App() {
   // müködéshez kapcsolodó kodok/számítások
 
   function Fooldalra() {
-    kezdooldalbeallitas("Fooldal");
+    kezdooldalbeallitas("Udvozloszoveg");
   }
 
-  let suly;
-  let magassagcmben;
-  let kor;
+
 
   function ferfiszukseglet() {
     return (ferfikaloriaszukseglet =
@@ -62,6 +60,13 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setmutatottOldal("Tomegnoveles");
   };
 
+  const Tomegeles2 = () => {
+    setKartyakLathatoak(false); // Az összes kártya elrejtése
+    setUjKomponensLathato(true);
+    setmutatottOldal("Tomegnoveles2");
+  };
+
+
   const Szintentartas = () => {
     setKartyakLathatoak(false); // Az összes kártya elrejtése
     setUjKomponensLathato(true);
@@ -73,6 +78,10 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setUjKomponensLathato(true);
     setmutatottOldal("Fogyas");
   };
+
+ 
+
+
 
   const Haza = () => {
     setKartyakLathatoak(true); // Az összes kártya elrejtése
@@ -96,7 +105,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
         {/*Fő komponens */}
         <div className="flex-1">
-          <Fooldal className="sm:mx-4" />
+          <Udvozloszoveg className="sm:mx-4" />
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Fogyas" && <Adatbekeres />}
@@ -108,6 +117,11 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
           {/* Az új komponens megjelenítése */}
           {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && 
+            <Adatbekeres />
+          }
+
+          {/* Az új komponens megjelenítése */}
+          {ujKomponensLathato && mutatottOldal === "Tomegnoveles2" && 
             <Adatbekeres />
           }
 
@@ -147,12 +161,21 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                 />
 
                 <Kartya
-                  tervnev="Tömegelni szeretnék"
-                  tuladonsag1="Nagyobb mennyiségű izomtömeget epítesz,és testzsírt szedsz fel"
+                  tervnev="Tömegelni szeretnék lassan"
+                  tuladonsag1=" Közepes izomtömeget epítesz,és kevés testzsírt szedsz fel(lassú folyamat)"
                   tulajdonsag2="Közepes fehérje mennyiség"
                   tulajdonsag3="Közepes szénhidrát mennyiség"
                   tulajdonsag4="Alacsony zsír mennyiség."
                   onClick={Tomegeles}
+                />
+
+<Kartya
+                  tervnev="Tömegelni szeretnék"
+                  tuladonsag1="Nagyobb mennyiségű izomtömeget epítesz,és közepes testzsírt szedsz fel"
+                  tulajdonsag2="Magas fehérje mennyiség"
+                  tulajdonsag3="Magas szénhidrát mennyiség"
+                  tulajdonsag4="Közepes zsír mennyiség."
+                  onClick={Tomegeles2}
                 />
               </div>
             </div>

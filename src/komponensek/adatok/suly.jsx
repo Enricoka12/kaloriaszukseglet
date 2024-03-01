@@ -1,6 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Suly(props) {
+
+const [suly,setsuly] = useState("")
+
+function sulybeiras(event) {
+  setsuly(event.target.value)
+}
+
+
   return (
     <div>
       <label className="block mb-2 md:text-8xl text-6xl font-extrabold  text-white dark:text-white text-center  p-20">
@@ -11,7 +19,7 @@ function Suly(props) {
     <div className="m-15">
         <form className="max-w-sm mx-auto">
     <label  className="block mb-2 text-sm font-medium text-white dark:text-white">Kg-ban add meg kérlek:</label>
-    <input type="number"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="kg" required />
+    <input value={suly} onChange={sulybeiras} type="number"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="kg" required />
 </form>
 </div>
 
@@ -27,7 +35,10 @@ function Suly(props) {
     </span>
   </button>
 
-  <button onClick={props.elorevaltas} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+  <button onClick={() => {
+            props.elorevaltas();
+            props.setsuly(suly); // A kor állapot átadása az Adatbekeres szülő komponensnek
+          }} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
     <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-transparent dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
       Tovább
     </span>

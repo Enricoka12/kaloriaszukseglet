@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
 
 function Nem(props) {
+
+
+
+
   const [selectedOption, setSelectedOption] = useState(null);
+  const [valasztottnem,setvalasztottnem] = useState();
 
   function handleClick(option) {
     setSelectedOption(option);
+    setvalasztottnem(option);
   }
+
+ 
+
+ 
 
   return (
     <div>
@@ -18,21 +27,21 @@ function Nem(props) {
         <li>
           <input
             type="radio"
-            id="hosting-small"
-            name="hosting"
             value="ferfi"
+            checked={selectedOption === "ferfi"} // Beállítás az ellenőrzött állapotra
+            onChange={() => handleClick("ferfi")} // onChange hozzáadása
             className="hidden peer"
             required
           />
           <label
             htmlFor="hosting-small"
             className={`flex items-center justify-center w-full p-5 hover:transform hover:scale-110 ${
-              selectedOption === "male" && "relative"
+              selectedOption === "ferfi" && "relative"
             }`}
-            onClick={() => handleClick("male")}
+            onClick={() => handleClick("ferfi") }
           >
             <div>
-              {selectedOption === "male" ? (
+              {selectedOption === "ferfi" ? (
                 <div>
                   {" "}
                   <h2 className="text-white text-center font-extrabold">
@@ -67,20 +76,20 @@ function Nem(props) {
         <li>
           <input
             type="radio"
-            id="hosting-big"
-            name="hosting"
             value="no"
+            checked={selectedOption === "no"} // Beállítás az ellenőrzött állapotra
+            onChange={() => handleClick("no")} // onChange hozzáadása
             className="hidden peer"
           />
           <label
             htmlFor="hosting-big"
             className={`flex items-center justify-center w-full p-5 hover:transform hover:scale-110 ${
-              selectedOption === "female" && "relative"
+              selectedOption === "no" && "relative"
             }`}
-            onClick={() => handleClick("female")}
+            onClick={() => handleClick("no")}
           >
             <div>
-              {selectedOption === "female" ? (
+              {selectedOption === "no" ? (
                 <div>
                   {" "}
                   <h2 className="text-white text-center font-extrabold">
@@ -137,7 +146,10 @@ function Nem(props) {
           </span>
         </button>
 
-        <button onClick={props.elorevaltas} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+        <button onClick={() => {
+           props.elorevaltas();
+            props.setvalasztottnem(selectedOption); }}
+         className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-transparent dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Tovább
           </span>
