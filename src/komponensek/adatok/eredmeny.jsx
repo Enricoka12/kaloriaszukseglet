@@ -103,13 +103,13 @@ function Eredmeny(props) {
 
           <div className=" bg-gradient-to-bl from-zinc-800 to-stone-600  outline outline-offset outline-neutral-500 rounded m-4 gap-2">
             <p className="pt-1 grid grid-cols-3  sm:grid sm:grid-cols-3 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent  ">
-              Fehérje: <span className="ml-2 sm:ml-0">{Math.floor(feherjegrammban)} Gramm</span> <img className="ml-8  inline-flex w-8 h-8" src="../../icons/feherje.png"/>
+              Fehérje: <span className="ml-1 sm:ml-0">{Math.floor(feherjegrammban)} Gramm</span> <img className="ml-8  inline-flex w-8 h-8" src="../../icons/feherje.png"/>
             </p>
           </div>
       
           <div className="bg-gradient-to-bl from-zinc-800 to-stone-600 outline outline-offset outline-neutral-500 rounded m-4 gap-2">
             <p className="pt-1 ml-2  grid grid-cols-3 sm:ml-0 sm:grid sm:grid-cols-3 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
-              Szénhidrát: <span className="ml-2 sm:ml-0">{Math.floor(szenhidratgrammban)} Gramm</span>  <img className="ml-8  inline-flex w-8 h-8" src="../../icons/szenhidrat.png"/>
+              Szénhidrát: <span className="ml-0 sm:ml-0">{Math.floor(szenhidratgrammban)} Gramm</span>  <img className="ml-8  inline-flex w-8 h-8" src="../../icons/szenhidrat.png"/>
             </p>
           </div>
          
