@@ -60,7 +60,7 @@ function Eredmeny(props) {
     zsirgrammban = zsirkaloria / 9;
     szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
     szenhidratgrammban = szenhidratkaloria / 4;
-  } else if (cel === "tomegeles") {
+  } else if (cel === "tomegnoveles") {
     szoveg = "Tömegelés(lassan)";
     feherjegrammban = suly * 1.8;
     feherjekaloria = feherjegrammban * 4;
@@ -68,7 +68,7 @@ function Eredmeny(props) {
     zsirgrammban = zsirkaloria / 9;
     szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
     szenhidratgrammban = szenhidratkaloria / 4;
-  } else if (cel === "tomegeles2") {
+  } else if (cel === "tomegnoveles2") {
     szoveg = "Tömegelés";
     feherjegrammban = suly * 2;
     feherjekaloria = feherjegrammban * 4;
