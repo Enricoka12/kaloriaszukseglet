@@ -9,6 +9,9 @@ function Eredmeny(props) {
 
 
 
+
+
+
     let kaloria;
 if (nem === "no") {
     kaloria = Math.floor((10 * suly + 6.25 * magassag - 5 * kor + 5)*tevekenyseg+feladat);
@@ -17,9 +20,55 @@ if (nem === "no") {
 }
 
 
+//Makró számítások:
+/*
+1g fehérje 4kal
+1g szénhidrát 8kal
+1g zsir 8 kal
 
-let celszoveg=`A celod: ${cel}`
-let szuksegeskaloria = `Szükséges kalória: ${kaloria}`;
+*/ 
+
+let feherjekaloria;
+let zsirkaloria;
+let szenhidratkaloria;
+
+let feherjegrammban;
+
+
+if (cel ==="fogyas") {
+    feherjegrammban=suly*2;
+    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
+    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
+    szenhidratkaloria = (kaloria-zsirkaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+} else if (cel ==="szalkasitas") {
+    feherjegrammban=suly*2;
+    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
+    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
+    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+} else if (cel ==="szintentartas") {
+    feherjegrammban=suly*1.8;
+    feherjekaloria = (suly*1.8)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
+    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
+    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+} else if (cel ==="tomegeles") {
+    feherjegrammban=suly*1.8;
+    feherjekaloria = (suly*1.8)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
+    zsirkaloria = (kaloria-feherjekaloria)*0.25/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
+    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+} else if (cel ==="tomegeles2") {
+    feherjegrammban=suly*2;
+    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
+    zsirkaloria = (kaloria-feherjekaloria)*0.3/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
+    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -30,19 +79,20 @@ let szuksegeskaloria = `Szükséges kalória: ${kaloria}`;
        <div>     
 
 <div className=" max-w-sm m-auto  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{celszoveg}</h5>
-<div className="flex items-baseline text-gray-900 dark:text-white">
-<h3>{szuksegeskaloria}</h3>
+<h2 className="text-center text-4xl pt-2">A kiválaszott terv:</h2>
+<h2 className="text-center text-4xl text-extrabold pt-2" >{cel}</h2>
+<div className="flex items-baseline text-gray-900 dark:text-white pt-2">
+<h3 className="text-4xl text-center pt-2">A szükséges kalória: <span>{kaloria}</span> Kalória</h3>
+<hr/>
 </div>
-<ul role="list" className="space-y-5 my-7">
-<li className="flex items-center">
-<svg className="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-</svg>
-<h2>teszt proba $$$teszt $$proba##&@@</h2>
-<h2>porkutteszta nokedli rantotthus szalmakrumpli csirkemellsalata fott tojas </h2>
-</li>
-</ul>
+
+<div className="pt-4 text-center">
+<p className="pt-3">Fehérje: <span>{Math.floor(feherjegrammban)} Gramm</span></p>
+<hr/>
+<p className="pt-3" >Szénhidrát: <span>{Math.floor(szenhidratkaloria)} Gramm</span></p>
+<hr/>
+<p className="pt-3">Zsir: <span>{Math.floor(zsirkaloria)} Gramm</span></p>
+</div>
 </div>
 
 <div className="text-center pt-14">
