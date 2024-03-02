@@ -52,9 +52,9 @@ if (cel === "fogyas") {
   feladat = -250
 } else if ( cel ==="szintentartas") {
   feladat = 0
-} else if ( cel ==="tomegeles") {
+} else if ( cel ==="tomegnoveles") {
   feladat = 250
-} else if (cel ==="tomegeles2") {
+} else if (cel ==="tomegnoveles2") {
   feladat = 500
 }
 
