@@ -14,8 +14,6 @@ function App() {
     kezdooldalbeallitas("Udvozloszoveg");
   }
 
-
-
   /*
  Mifflin-St Jeor Equation:
 For men:
@@ -56,7 +54,6 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setmutatottOldal("Tomegnoveles2");
   };
 
-
   const Szintentartas = () => {
     setKartyakLathatoak(false); // Az összes kártya elrejtése
     setUjKomponensLathato(true);
@@ -69,10 +66,6 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setmutatottOldal("Fogyas");
   };
 
- 
-
-
-
   const Haza = () => {
     setKartyakLathatoak(true); // Az összes kártya elrejtése
     setUjKomponensLathato(false); // Az új komponens megjelenítése
@@ -80,64 +73,57 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
   const [mutatottOldal, setmutatottOldal] = useState();
 
-
   let fogyas = -500;
 
-  let szalkasitas =-250
+  let szalkasitas = -250;
 
-let szintentertas = 0
+  let szintentertas = 0;
 
-let tomegeles = 250
+  let tomegeles = 250;
 
-let tomegeles2 = 500
-
-
+  let tomegeles2 = 500;
 
   return (
     <div className=" bg-black">
+      
       {/* komponensek hivasa gombnyomás szerint */}
-
+      <div className="hatter">
       <div className="flex flex-col min-h-screen">
-
-        
         {/*Navigáció */}
         <div className=" text-white py-4">
           <Navigacio onClick={Haza} />
         </div>
-
-    
-        
-
+       
         {/*Fő komponens  ha az ujkomponenslathato akkor ne legyen lathato az udvozloszoveg */}
         <div className="flex-1">
-
-          {ujKomponensLathato ? null :  <Udvozloszoveg className="sm:mx-4" />}
-          
+          {ujKomponensLathato ? null : <Udvozloszoveg className="sm:mx-4" />}
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Fogyas" &&
-           <Adatbekeres cel="fogyas" /> //<--- itt szeretném átadni az adatbekeres komponensnek azt az erteket amit a mutatottOldal felvesz igy helyes?
-           }
+          {
+            ujKomponensLathato && mutatottOldal === "Fogyas" && (
+              <Adatbekeres cel="fogyas" />
+            ) //<--- itt szeretném átadni az adatbekeres komponensnek azt az erteket amit a mutatottOldal felvesz igy helyes?
+          }
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Szalkasitas" && 
+          {ujKomponensLathato && mutatottOldal === "Szalkasitas" && (
             <Adatbekeres cel="szalkasitas" />
-          } 
+          )}
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && 
+          {ujKomponensLathato && mutatottOldal === "Tomegnoveles" && (
             <Adatbekeres cel="tomegnoveles" />
-          }
+          )}
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Tomegnoveles2" && 
+          {ujKomponensLathato && mutatottOldal === "Tomegnoveles2" && (
             <Adatbekeres cel="tomegnoveles2" />
-          }
+          )}
 
           {/* Az új komponens megjelenítése */}
-          {ujKomponensLathato && mutatottOldal === "Szintentartas" && 
-            <Adatbekeres  cel="szintentartas" />
-          }
+          {ujKomponensLathato && mutatottOldal === "Szintentartas" && (
+            <Adatbekeres cel="szintentartas" />
+          )}
 
           {kartyakLathatoak && (
             <div className="kartyak container mx-auto">
@@ -178,7 +164,7 @@ let tomegeles2 = 500
                   onClick={Tomegeles}
                 />
 
-<Kartya
+                <Kartya
                   tervnev="Tömegelni szeretnék"
                   tuladonsag1="Nagyobb mennyiségű izomtömeget epítesz,és közepes testzsírt szedsz fel"
                   tulajdonsag2="Magas fehérje mennyiség"
@@ -190,12 +176,13 @@ let tomegeles2 = 500
             </div>
           )}
         </div>
-        
+
         {/*Lábrész */}
         <div className=" text-white py-4">
           <Lab />
         </div>
       </div>
+    </div>
     </div>
   );
 }

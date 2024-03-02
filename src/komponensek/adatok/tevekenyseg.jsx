@@ -4,26 +4,33 @@ import Tevekenysegkartya from "./tevekenysegkartya";
 function Tevekenyseg(props) {
   const [tevekenyseg, settevekenyseg] = useState("");
 
+const [kivalasztva,setkivalasztva] = useState(false)
+
 
 
 function nagyonkonnyu() {
     settevekenyseg("1.2")
+
 }
 
 function konnyu() {
     settevekenyseg("1.375")
+
 }
 
 function kozepes() {
     settevekenyseg("1.55")
+
 }
 
 function nehez() {
     settevekenyseg("1.725")
+
 }
 
 function nagyonnehez() {
     settevekenyseg("1.9")
+
 }
 
 
@@ -34,45 +41,75 @@ function nagyonnehez() {
         <div className="m-auto grid gap-3 grid-cols-1 sm:grid-cols-2 sm:gap-2 md:grid-cols-3 gap-4">
           {/* Tevékenység kártya */}
 
+
+
+
+{kivalasztva && tevekenyseg ? <h1>Ez lett kiválasztva</h1>:
           <Tevekenysegkartya
             nev="Ülőmunkát végzek"
             szoveg1="Kevesebb mint 5000 lépésem van naponta."
             szoveg2="Nem edzek"
             //ez egy onclick funkcio propsként!!
-            kivalasztas={nagyonkonnyu}
+            kivalasztas={() => {
+              nagyonkonnyu();
+            }}
           />
+}
+
+{kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
 
           <Tevekenysegkartya
             nev="Könnyű fizikai munkát végzek"
             szoveg1="Kevesebb mint 5000-7000 lépésem van naponta."
             szoveg2="Hetente 1-3x edzek"
              //ez egy onclick funkcio propsként!!
-             kivalasztas={konnyu}
+             kivalasztas={() => {
+              konnyu();
+            }}
           />
+}
+
+
+          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
 
           <Tevekenysegkartya
             nev="Fizikai munkát végzek"
             szoveg1="Kevesebb mint 7000-8000 lépésem van naponta."
             szoveg2="Hetente 3-5x edzek"
              //ez egy onclick funkcio propsként!!
-             kivalasztas={kozepes}
+             kivalasztas={() => {
+              kozepes();
+            }}
           />
+}
+
+
+          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
 
           <Tevekenysegkartya
             nev="Fizikai munkát végzek"
             szoveg1=" 10000 lépésem van naponta."
             szoveg2="Hetente 6-7x edzek"
              //ez egy onclick funkcio propsként!!
-             kivalasztas={nehez}
+             kivalasztas={() => {
+              nehez();
+            }}
           />
+}
+
+          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
 
           <Tevekenysegkartya
             nev="Nehéz fizikai munkát végzek"
             szoveg1="Több mint 10000 lépésem van naponta."
             szoveg2="Hetente 6-7x edzek"
              //ez egy onclick funkcio propsként!!
-             kivalasztas={nagyonnehez}
+             kivalasztas={() => {
+              nagyonnehez();
+            }}
           />
+}
+
         </div>
         </div>
         {/* GOMBOK*/}
