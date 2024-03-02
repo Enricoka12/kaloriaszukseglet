@@ -71,6 +71,11 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
     setUjKomponensLathato(false); // Az új komponens megjelenítése
   };
 
+  const fooldalravaltas = () => {
+    setKartyakLathatoak(true); // Az összes kártya elrejtése
+    setUjKomponensLathato(false); // Az új komponens megjelenítése
+  };
+
   const [mutatottOldal, setmutatottOldal] = useState();
 
   let fogyas = -500;
@@ -127,10 +132,13 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
           {kartyakLathatoak && (
             <div className="kartyak container mx-auto">
-              <div className="grid mx-auto gap-2 p-20 sm:p-0  md:gap-4  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-4 ">
+
+              <div className="grid mx-auto gap-4 p-20 sm:p-0  md:gap-8  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-3 ">
                 <Kartya
                   tervnev="Fogyni szeretnék('Gyorsan')"
                   tuladonsag1="Nagy mennyiségű Testzsirt fogsz veszíteni"
+                  felsorolas1 ="-500 kalóriás deficitben leszel"
+                  felsorolas2 ="-Hetente -0.5kg++ "
                   tulajdonsag2="Magas fehérje mennyiség"
                   tulajdonsag3="Alacsony szénhidrát mennyiség"
                   tulajdonsag4="Magas zsír mennyiség"
@@ -140,6 +148,8 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                 <Kartya
                   tervnev="Szálkásítani szeretnék"
                   tuladonsag1="Megtartod az izomtömeged,és testzsírt veszítesz."
+                  felsorolas1 ="-250 vagy -300 kalóriás deficitben leszel"
+                  felsorolas2 ="-Hetente -0.3kg-0.5kg "
                   tulajdonsag2="Magas fehérje mennyiség"
                   tulajdonsag3="Alacsony szénhidrát mennyiség"
                   tulajdonsag4="Közepes zsír mennyiség"
@@ -149,6 +159,8 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                 <Kartya
                   tervnev="Szintentartást szeretnék"
                   tuladonsag1="Kissebb izömtömeget építesz,miközben testzsírt adsz le"
+                  felsorolas1 ="Kalória egyensúlyban leszel"
+                  felsorolas2 ="-Hetente -0.1kg-0.2kg "
                   tulajdonsag2="Közepes fehérje mennyiség"
                   tulajdonsag3="Közepes szénhidrát mennyiség"
                   tulajdonsag4="Közepes zsír mennyiség"
@@ -158,6 +170,8 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                 <Kartya
                   tervnev="Tömegelni szeretnék lassan"
                   tuladonsag1=" Közepes izomtömeget epítesz,és kevés testzsírt szedsz fel(lassú folyamat)"
+                  felsorolas1 ="-250 vagy -300 kalória plusszban leszel"
+                  felsorolas2 ="-Hetente +0.3kg-0.5kg "
                   tulajdonsag2="Közepes fehérje mennyiség"
                   tulajdonsag3="Közepes szénhidrát mennyiség"
                   tulajdonsag4="Alacsony zsír mennyiség."
@@ -167,6 +181,8 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
                 <Kartya
                   tervnev="Tömegelni szeretnék"
                   tuladonsag1="Nagyobb mennyiségű izomtömeget epítesz,és közepes testzsírt szedsz fel"
+                  felsorolas1 ="-500 kalória plusszban leszel"
+                  felsorolas2 ="-Hetente +0.5kg++ "
                   tulajdonsag2="Magas fehérje mennyiség"
                   tulajdonsag3="Magas szénhidrát mennyiség"
                   tulajdonsag4="Közepes zsír mennyiség."

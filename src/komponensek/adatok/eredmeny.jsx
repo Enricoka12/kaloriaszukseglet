@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Eredmeny(props) {
   const { suly, nem, magassag, kor, feladat, tevekenyseg, cel } = props; // Az adatok destructuring segítségével
 

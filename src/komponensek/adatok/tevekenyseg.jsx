@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Tevekenysegkartya from "./tevekenysegkartya";
+import Pipa from "./pipa";
 
 function Tevekenyseg(props) {
   const [tevekenyseg, settevekenyseg] = useState("");
 
-const [kivalasztva,setkivalasztva] = useState(false)
 
 
 
@@ -44,7 +44,7 @@ function nagyonnehez() {
 
 
 
-{kivalasztva && tevekenyseg ? <h1>Ez lett kiválasztva</h1>:
+{tevekenyseg === "1.2" ? <Pipa/>:
           <Tevekenysegkartya
             nev="Ülőmunkát végzek"
             szoveg1="Kevesebb mint 5000 lépésem van naponta."
@@ -56,7 +56,7 @@ function nagyonnehez() {
           />
 }
 
-{kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
+{tevekenyseg === "1.375" ? <Pipa/>:
 
           <Tevekenysegkartya
             nev="Könnyű fizikai munkát végzek"
@@ -70,7 +70,7 @@ function nagyonnehez() {
 }
 
 
-          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
+          {tevekenyseg === "1.55" ? <Pipa/>:
 
           <Tevekenysegkartya
             nev="Fizikai munkát végzek"
@@ -84,7 +84,7 @@ function nagyonnehez() {
 }
 
 
-          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
+          {tevekenyseg === "1.725"? <Pipa/>:
 
           <Tevekenysegkartya
             nev="Fizikai munkát végzek"
@@ -97,7 +97,7 @@ function nagyonnehez() {
           />
 }
 
-          {kivalasztva && tevekenyseg ? <h1 className="text-white">Ez lett kiválasztva</h1>:
+          {tevekenyseg === "1.9" ? <Pipa/>:
 
           <Tevekenysegkartya
             nev="Nehéz fizikai munkát végzek"
