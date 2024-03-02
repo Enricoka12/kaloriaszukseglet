@@ -33,33 +33,44 @@ let zsirkaloria;
 let szenhidratkaloria;
 
 let feherjegrammban;
+let szenhidratgrammban;
+let zsirgrammban;
 
-
-if (cel ==="fogyas") {
-    feherjegrammban=suly*2;
-    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
-    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
-    szenhidratkaloria = (kaloria-zsirkaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
-} else if (cel ==="szalkasitas") {
-    feherjegrammban=suly*2;
-    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
-    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
-    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
-} else if (cel ==="szintentartas") {
-    feherjegrammban=suly*1.8;
-    feherjekaloria = (suly*1.8)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
-    zsirkaloria = (kaloria-feherjekaloria)*0.4/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
-    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
-} else if (cel ==="tomegeles") {
-    feherjegrammban=suly*1.8;
-    feherjekaloria = (suly*1.8)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
-    zsirkaloria = (kaloria-feherjekaloria)*0.25/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
-    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
-} else if (cel ==="tomegeles2") {
-    feherjegrammban=suly*2;
-    feherjekaloria = (suly*2)*4; //testsuly kg * 2g fehérje * 4 igy megkapom mennyi kaloria
-    zsirkaloria = (kaloria-feherjekaloria)*0.3/8 // igy megkapom a fennmaradt kaloriaban mennyi a fennmaradt kalorianak a 40%a zsirban
-    szenhidratkaloria = (kaloria-zsirkaloria-feherjekaloria)/8 //igy megkapom mennyi kaloriaban a fennmaradt kaloria  szenhidratban
+if (cel === "fogyas") {
+    feherjegrammban = suly * 2;
+    feherjekaloria = feherjegrammban * 4;
+    zsirkaloria = (kaloria - feherjekaloria) * 0.4;
+    zsirgrammban = zsirkaloria / 9; // 1g zsír ≈ 9 kalória
+    szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
+    szenhidratgrammban = szenhidratkaloria / 4; // 1g szénhidrát ≈ 4 kalória
+} else if (cel === "szalkasitas") {
+    feherjegrammban = suly * 2;
+    feherjekaloria = feherjegrammban * 4;
+    zsirkaloria = (kaloria - feherjekaloria) * 0.4;
+    zsirgrammban = zsirkaloria / 9;
+    szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
+    szenhidratgrammban = szenhidratkaloria / 4;
+} else if (cel === "szintentartas") {
+    feherjegrammban = suly * 1.8;
+    feherjekaloria = feherjegrammban * 4;
+    zsirkaloria = (kaloria - feherjekaloria) * 0.4;
+    zsirgrammban = zsirkaloria / 9;
+    szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
+    szenhidratgrammban = szenhidratkaloria / 4;
+} else if (cel === "tomegeles") {
+    feherjegrammban = suly * 1.8;
+    feherjekaloria = feherjegrammban * 4;
+    zsirkaloria = (kaloria - feherjekaloria) * 0.25;
+    zsirgrammban = zsirkaloria / 9;
+    szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
+    szenhidratgrammban = szenhidratkaloria / 4;
+} else if (cel === "tomegeles2") {
+    feherjegrammban = suly * 2;
+    feherjekaloria = feherjegrammban * 4;
+    zsirkaloria = (kaloria - feherjekaloria) * 0.3;
+    zsirgrammban = zsirkaloria / 9;
+    szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
+    szenhidratgrammban = szenhidratkaloria / 4;
 }
 
 
@@ -89,9 +100,9 @@ if (cel ==="fogyas") {
 <div className="pt-4 text-center">
 <p className="pt-3">Fehérje: <span>{Math.floor(feherjegrammban)} Gramm</span></p>
 <hr/>
-<p className="pt-3" >Szénhidrát: <span>{Math.floor(szenhidratkaloria)} Gramm</span></p>
+<p className="pt-3" >Szénhidrát: <span>{Math.floor(szenhidratgrammban)} Gramm</span></p>
 <hr/>
-<p className="pt-3">Zsir: <span>{Math.floor(zsirkaloria)} Gramm</span></p>
+<p className="pt-3">Zsir: <span>{Math.floor(zsirgrammban)} Gramm</span></p>
 </div>
 </div>
 
