@@ -5,6 +5,7 @@ import Suly from "./suly";
 import Magassag from "./magassag"
 import Nem from "./nem"
 import Eredmeny from "./eredmeny";
+import Tevekenyseg from "./tevekenyseg";
 
 function Adatbekeres(props) {
 
@@ -36,7 +37,7 @@ const [kor,setkor] = useState("");
 
 const [magassag,setmagassag] = useState("");
 
-
+const [tevekenyseg,settevekenyseg] = useState("")
 
 const [suly,setsuly] = useState("");
 
@@ -56,6 +57,7 @@ if (cel === "fogyas") {
 } else if (cel ==="tomegeles2") {
   feladat = 500
 }
+
 
 
 
@@ -92,17 +94,19 @@ function adatkinyeresSuly(suly) { //uj nevet adok amivel itt ebben a komponensbe
   setsuly(suly);    // a gyermek komponensben lévő funkció nevet hivom meg,és kérem a propsként tárolt adatot!
 }
 
-
+function adatkinyeresTevekenyseg(tevekenyseg) {
+  settevekenyseg(tevekenyseg)
+}
 
 
 //adatok kinyerése
 
-console.log(nem)
-console.log(kor)
-console.log(magassag)
-console.log(suly)
-
-
+console.log("a valasztott nem: " + nem)
+console.log("a beirt kor " + kor)
+console.log("a beirt magassag " + magassag)
+console.log("a beirt suly pedig " + suly)
+console.log("a napi elfoglaltsag merteke " + tevekenyseg)
+console.log("a kaloria + vagy - mértéke: " + feladat)
 
     return (
 
@@ -117,8 +121,9 @@ console.log(suly)
 
         {aktivoldal === 4 ? <Suly elorevaltas={kovetkezooldal} hatravaltas={elozooldal} setsuly={adatkinyeresSuly} /> : null}
         
+        {aktivoldal === 5 ? <Tevekenyseg elorevaltas={kovetkezooldal} hatravaltas={elozooldal} kivalasztas={adatkinyeresTevekenyseg} /> : null}
 
-        {aktivoldal === 5 ? <Eredmeny hatravaltas={elozooldal} suly={suly} kor={kor} magassag={magassag}  nem={nem} /> : null}
+        {aktivoldal === 6 ? <Eredmeny hatravaltas={elozooldal} suly={suly} kor={kor} magassag={magassag}  nem={nem} feladat={feladat} tevekenyseg={tevekenyseg} cel={cel} /> : null}
 
         
 

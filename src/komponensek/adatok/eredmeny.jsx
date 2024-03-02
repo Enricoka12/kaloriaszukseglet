@@ -3,7 +3,7 @@ import React from "react";
 
 
 function Eredmeny(props) {
-    const { suly, nem, magassag, kor } = props; // Az adatok destructuring segítségével
+    const { suly, nem, magassag, kor,feladat,tevekenyseg,cel } = props; // Az adatok destructuring segítségével
 
 
 
@@ -11,13 +11,15 @@ function Eredmeny(props) {
 
     let kaloria;
 if (nem === "no") {
-    kaloria = 10 * suly + 6.25 * magassag - 5 * kor + 5;
+    kaloria = Math.floor((10 * suly + 6.25 * magassag - 5 * kor + 5)*tevekenyseg+feladat);
 } else {
-    kaloria = 10 * suly + 6.25 * magassag - 5 * kor - 161;
+    kaloria = Math.floor((10 * suly + 6.25 * magassag - 5 * kor - 161)*tevekenyseg+feladat);
 }
 
 
-let tervnev = `Szükséges kalória: ${kaloria}`;
+
+let celszoveg=`A celod: ${cel}`
+let szuksegeskaloria = `Szükséges kalória: ${kaloria}`;
 
 
 
@@ -28,11 +30,9 @@ let tervnev = `Szükséges kalória: ${kaloria}`;
        <div>     
 
 <div className=" max-w-sm m-auto  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{tervnev}</h5>
+<h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{celszoveg}</h5>
 <div className="flex items-baseline text-gray-900 dark:text-white">
-<span className="text-3xl font-semibold"></span>
-<span className="text-5xl font-extrabold tracking-tight">Itt lessz majd</span>
-<span className="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/az összes többi adat</span>
+<h3>{szuksegeskaloria}</h3>
 </div>
 <ul role="list" className="space-y-5 my-7">
 <li className="flex items-center">
