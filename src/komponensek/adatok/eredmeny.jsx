@@ -92,32 +92,35 @@ function Eredmeny(props) {
 
         <h2 className=" text-center text-4xl pt-2 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">A célod:</h2>
         <h2 className="text-center text-4xl text-extrabold pt-2 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">{szoveg}</h2>
-        <div className="flex items-baseline dark:text-white pt-2">
-          <h3 className="text-4x l text-center pt-2 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
-            A szükséges kalória: <span>{kaloria}</span> Kalória
+        <div className="flex  dark:text-white pt-2">
+          <h3 className=" text-3xl text-center pt-2 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+            Szükséges kalória: <span className="text-5xl underline underline-offset-4 decoration-white">{kaloria}</span> 
           </h3>
         
         </div>
 
-        <div className="pt-4 text-center">
-          <div className="bg-gradient-to-bl from-zinc-800 to-stone-600  outline outline-offset outline-neutral-500 rounded m-4 gap-2">
-            <p className="pt-1  bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent  ">
-              Fehérje: <span>{Math.floor(feherjegrammban)} Gramm</span> <img className=" ml-5 inline-flex w-8 h-8" src="../../icons/feherje.png"/>
+        <div className="pt-4  text-center">
+
+          <div className=" bg-gradient-to-bl from-zinc-800 to-stone-600  outline outline-offset outline-neutral-500 rounded m-4 gap-2">
+            <p className="pt-1 grid grid-cols-3  sm:grid sm:grid-cols-3 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent  ">
+              Fehérje: <span className="ml-2 sm:ml-0">{Math.floor(feherjegrammban)} Gramm</span> <img className="ml-8  inline-flex w-8 h-8" src="../../icons/feherje.png"/>
             </p>
           </div>
       
           <div className="bg-gradient-to-bl from-zinc-800 to-stone-600 outline outline-offset outline-neutral-500 rounded m-4 gap-2">
-            <p className="pt-1 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
-              Szénhidrát: <span>{Math.floor(szenhidratgrammban)} Gramm</span>  <img className=" ml-5 inline-flex w-8 h-8" src="../../icons/szenhidrat.png"/>
+            <p className="pt-1 ml-2  grid grid-cols-3 sm:ml-0 sm:grid sm:grid-cols-3 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+              Szénhidrát: <span className="ml-2 sm:ml-0">{Math.floor(szenhidratgrammban)} Gramm</span>  <img className="ml-8  inline-flex w-8 h-8" src="../../icons/szenhidrat.png"/>
             </p>
           </div>
          
           <div className="bg-gradient-to-bl from-zinc-800 to-stone-600 outline outline-offset outline-neutral-500 rounded m-4 gap-2">
-            <p className="pt-1 bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent ">
-              Zsir: <span>{Math.floor(zsirgrammban)} Gramm</span>  <img className=" ml-5 inline-flex w-8 h-8" src="../../icons/zsir.png"/>
+            <p className="pt-1 grid grid-cols-3 sm:grid sm:grid-cols-3  bg-gradient-to-bl from-zinc-600 via-zinc-200 to-zinc-500 bg-clip-text text-transparent ">
+              Zsir: <span className="ml-2 sm:ml-0">{Math.floor(zsirgrammban)} Gramm</span>  <img className="ml-8  inline-flex w-8 h-8" src="../../icons/zsir.png"/>
             </p>
           </div>
         </div>
+
+
       </div>
       </div>
 
