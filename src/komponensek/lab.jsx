@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import "./fooldal.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { FaLinkedin } from "react-icons/fa";
+
+
+
 
 function Lab() {
+
+
+
+
+
   let ev = new Date().getFullYear();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -46,14 +59,18 @@ function Lab() {
 
                 {isOpen && (
                   <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+
+
                     <div className="bg-white rounded-lg p-8">
-                      <div className="text-right">
+
+
+                      <div className="flex justify-end    ">
                         <button
                           onClick={closeModal}
-                          className="text-gray-400 text-right hover:text-gray-700 transition duration-150"
+                          className="text-white  bg-red-700 hover:text-gray-700 transition duration-150"
                         >
                           <svg
-                            className="w-6 h-6"
+                            className="w-8 h-8"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -71,30 +88,29 @@ function Lab() {
 
                       <div className=" justify-between items-center mb-4">
                         <h2 className="text-lg font-semibold text-gray-900">
-                          Hiba esetén vedd fel velem a kapcsolatot:
+                          Hiba esetén vedd fel velem a kapcsolatot: 
                         </h2>
-
+                        
 
                         <div className="text-center text-2xl font-bold">
 
 
 
 
+                          
                           <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 ">
+                          
+                          
                           <a href="https://www.facebook.com/boros.rico.3"
                            className="flex justify-center text-center items-center"
                           >
-                               <img
-                              className="w-8 h-8 mr-4 text-center align-middle"
-                              src="../icons/facebook.png"
-                              alt="Facebook ikon"
-                            />
+                               <FaFacebook className="text-blue-500" />
                             </a>
 
                             <a href="https://www.facebook.com/boros.rico.3"
-                           className="flex justify-center text-center items-center"
+                           className="flex justify-start"
                           >
-                             <span> Facebook</span>
+                             <span className=""> Facebook</span>
                             </a>
                            
                            
@@ -102,58 +118,51 @@ function Lab() {
                           </div>
 
 
-                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 justify-items-center ">
+                          
+                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2  ">
+                         
                           <a href="https://www.linkedin.com/in/enrico-boros-17a69a25a"
-                              className="flex items-center"
+                              className="flex justify-center text-center items-center"
                           >
-                             <img
-                              className="w-8 h-8 mr-4 align-middle"
-                              src="../icons/linkedin.png"
-                              alt="Linkedin ikon"
-                            />
+                            <FaLinkedin className="text-blue-500" />
                             </a>
                            
                             <a href="https://www.linkedin.com/in/enrico-boros-17a69a25a"
-                              className="flex items-center"
+                              className="flex justify-start"
                           >
-                             <span> Linkedin </span>
+                             <span className=""> Linkedin </span>
                             </a>
 
 
                           </div>
-                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 justify-items-center">
+                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 ">
                             <a
                               href="https://twitter.com/BorosEnrico"
-                              className="flex items-center"
+                              className="flex justify-center text-center items-center"
                             >
-                              <img
-                                className="w-9 h-9 mr-4"
-                                src="../icons/twitter.png"
-                                alt="Twitter ikon"
-                              />
+                             <FaTwitter className="text-blue-500"/>
                             </a>
+
                             <a
                               href="https://twitter.com/BorosEnrico"
-                              className="flex items-center"
+                              className="flex justify-start "
                             >
-                              <span>Twitter</span>
+                              <span className="">Twitter</span>
                             </a>
                           </div>
 
 
 
 
-                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 justify-items-center ">
+                          <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2">
                             <a href="mailto:borose12@hotmail.com"
-                            className="flex items-center">
-                                <img src="../icons/email.png"
-                                className="w-8 h-8 mr-5"
-                                alt="Email Ikon" />
+                            className="flex justify-center text-center items-center">
+                              <IoMdMail className="text-blue-500"/>
                                 </a>
 
                                 <a href="mailto:borose12@hotmail.com"
-                            className="flex items-center">
-                               <span> Email </span> 
+                            className="flex justify-start">
+                               <span className=""> Email </span> 
                                 </a>
 
 
