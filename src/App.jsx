@@ -133,7 +133,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
           {kartyakLathatoak && (
             <div className="kartyak container mx-auto">
 
-              <div className="grid mx-auto gap-4 p-20 sm:p-0  md:gap-8  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-3 ">
+              <div className="grid mx-auto gap-4 p-5 sm:p-20 sm:gap-6 sm:p-6 md:gap-8  sm:grid-cols-1  md:grid-cols-2  xl:grid-cols-3 ">
                 <Kartya
                   tervnev="Fogyni szeretnék('Gyorsan')"
                   tuladonsag1="Nagy mennyiségű Testzsirt fogsz veszíteni"
