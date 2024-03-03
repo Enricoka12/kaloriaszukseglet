@@ -61,7 +61,7 @@ function Eredmeny(props) {
     szenhidratkaloria = kaloria - zsirkaloria - feherjekaloria;
     szenhidratgrammban = szenhidratkaloria / 4;
   } else if (cel === "tomegnoveles") {
-    szoveg = "Tömegelés(lassan)";
+    szoveg = "Tömegelés(Lassú)";
     feherjegrammban = suly * 1.8;
     feherjekaloria = feherjegrammban * 4;
     zsirkaloria = (kaloria - feherjekaloria) * 0.25;

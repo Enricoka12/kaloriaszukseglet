@@ -9,6 +9,19 @@ import React, { useState } from "react";
 function Kor(props) {
 
 
+function kattintas() {
+
+  if (kor.trim() !== "") {
+    // Ha a kor mező nem üres, akkor hívja meg a szülő komponensben lévő tovább lépés funkciót
+    props.elorevaltas();
+    props.setkor(kor); // A kor állapot átadása az Adatbekeres szülő komponensnek
+  } else {
+    // Ha a kor mező üres, jelenítsen meg egy hibaüzenetet vagy figyelmeztetést
+    console.log("Kérlek írj be valamit a kor mezőbe!");
+  }
+}
+
+
   const [kor,setkor] = useState("");
 
 
@@ -46,8 +59,7 @@ function korbeiras(event) {
     </button>
 
   <button  onClick={() => {
-            props.elorevaltas();
-            props.setkor(kor); // A kor állapot átadása az Adatbekeres szülő komponensnek
+            kattintas() // A kor állapot átadása az Adatbekeres szülő komponensnek
           }}
            className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
     <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-transparent dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">

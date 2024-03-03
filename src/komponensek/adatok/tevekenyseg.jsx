@@ -5,6 +5,17 @@ import Pipa from "./pipa";
 function Tevekenyseg(props) {
   const [tevekenyseg, settevekenyseg] = useState("");
 
+  function kattintas() {
+
+    if (tevekenyseg.trim() !== "") {
+      // Ha a kor mező nem üres, akkor hívja meg a szülő komponensben lévő tovább lépés funkciót
+      props.elorevaltas();
+      props.kivalasztas(tevekenyseg); // A kor állapot átadása az Adatbekeres szülő komponensnek
+    } else {
+      // Ha a kor mező üres, jelenítsen meg egy hibaüzenetet vagy figyelmeztetést
+      console.log("Kérlek írj be valamit a kor mezőbe!");
+    }
+  }
 
 
 
@@ -140,8 +151,7 @@ function nagyonnehez() {
 
           <button
             onClick={() => {
-              props.elorevaltas();
-              props.kivalasztas(tevekenyseg); // A tevekenyseg  átadása az Adatbekeres szülő komponensnek
+             kattintas(); // A tevekenyseg  átadása az Adatbekeres szülő komponensnek
             }}
             className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800"
           >
