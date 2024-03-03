@@ -158,7 +158,7 @@ szukseglet = 10*suly+6.25*magassagcmben-5*kor-nem
 
                 <Kartya
                   tervnev="Szintentartást szeretnék"
-                  tuladonsag1="Kissebb izömtömeget építesz,miközben testzsírt adsz le"
+                  tuladonsag1="Izmot építesz,miközben testzsírt adsz le"
                   felsorolas1 ="Kalória egyensúlyban leszel"
                   felsorolas2 ="-Hetente -0.1kg-0.2kg "
                   tulajdonsag2="Közepes fehérje mennyiség"
