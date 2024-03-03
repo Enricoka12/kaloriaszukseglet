@@ -144,14 +144,14 @@ function Lab() {
 
 
                           <div className="border rounded-lg border-gray-200 mt-1 grid grid-cols-2 justify-items-center ">
-                            <a href="borose12@hotmail.com"
+                            <a href="mailto:borose12@hotmail.com"
                             className="flex items-center">
                                 <img src="../icons/email.png"
                                 className="w-8 h-8 mr-5"
                                 alt="Email Ikon" />
                                 </a>
 
-                                <a href="borose12@hotmail.com"
+                                <a href="mailto:borose12@hotmail.com"
                             className="flex items-center">
                                <span> Email </span> 
                                 </a>
