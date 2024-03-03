@@ -19,7 +19,7 @@ function Lab() {
       <footer className=" rounded-lg shadow m-4">
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © {ev} <a href="">Boros Enrico</a>.Minden jog fenntartva.
+            © {ev} <a className="hover:underline hover:underline-offset-8" href="https://borosenrico.hu">Boros Enrico</a>.Minden jog fenntartva.
           </span>
           <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <li>
@@ -39,7 +39,7 @@ function Lab() {
               <div className="relative">
                 <button
                   onClick={openModal}
-                  className="block text-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  className="hover:underline hover:underline-offset-8 block text-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   Kapcsolat
                 </button>
@@ -168,7 +168,7 @@ function Lab() {
                         </div>
                       </div>
                       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                        © {ev} <a href="">Boros Enrico</a>.Minden jog
+                        © {ev} <a className="hover:underline hover:underline-offset-8" href="https://borosenrico.hu">Boros Enrico</a>.Minden jog
                         fenntartva.
                       </span>
                     </div>
